@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "b6c50c56-e7a4-4b65-a1e1-7b101e590206",
+		"name": "eHipaa Invite Email",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AWS Auth",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:16264",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "audience",
+							"value": "PafApiV1",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "secret",
+							"type": "text"
+						},
+						{
+							"key": "client_Id",
+							"value": "487fa48029964ad3ae8ceb8898711cb9",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "vpFYsMVQPsB8gEQqVIHV6kfBi77rl-Z999fCm4yR_z4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://hip02-auth-caremetx-qa202.cmtx-aws.com/auth",
+					"protocol": "https",
+					"host": [
+						"hip02-auth-caremetx-qa202",
+						"cmtx-aws",
+						"com"
+					],
+					"path": [
+						"auth"
+					],
+					"query": [
+						{
+							"key": "audience",
+							"value": "PafApiV1",
+							"disabled": true
+						},
+						{
+							"key": "grant_type",
+							"value": "secret",
+							"disabled": true
+						},
+						{
+							"key": "client_Id",
+							"value": "06bf612821be49278ed1372eeadf129a",
+							"disabled": true
+						},
+						{
+							"key": "client_secret",
+							"value": "qFfANLpPhpLJI9NzBf34msY1aQ3nPJhI0OzqWiIzpCM",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eHipaa Invite Initiate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJncmFudCI6IkNsaWVudElkIiwidW5pcXVlX25hbWUiOiI0ODdmYTQ4MDI5OTY0YWQzYWU4Y2ViODg5ODcxMWNiOSIsInN1YiI6IjQ4N2ZhNDgwMjk5NjRhZDNhZThjZWI4ODk4NzExY2I5Iiwicm9sZSI6IlJlc3RDbGllbnQiLCJpc3MiOiJQQUYuQXV0aCIsImF1ZCI6IlBhZkFwaVYxIiwiZXhwIjoxNjc4NDU4ODk3LCJuYmYiOjE2Nzg0NTc2OTd9.p057nFb2y7yNldUje3dr3AAqYzyMskuTvf3pz4IMPg0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "client_Id",
+						"value": "487fa48029964ad3ae8ceb8898711cb9",
+						"type": "default"
+					},
+					{
+						"key": "client_secret",
+						"value": "vpFYsMVQPsB8gEQqVIHV6kfBi77rl-Z999fCm4yR_z4",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"patientFirstName\": \"Suraj\",\r\n    \"patientMiddleInitial\": \"\",\r\n    \"patientLastName\": \"Jadhav\",\r\n    \"patientGender\": \"Male\",\r\n    \"patientDateOfBirth\": \"1992-02-20T00:00:00\",\r\n    \"patientAddress1\": \"101 main street\",\r\n    \"patientAddress2\": \"\",\r\n    \"patientCity\": \"Rockville\",\r\n    \"patientState\": \"MD\",\r\n    \"patientZipCode\": \"20850\",\r\n    \"patientEmail\": \"sagar.katarnaware@caremetx.com\",\r\n    \"patientCellNumber\": \"6666666666\",\r\n    \"channel\": \"Email\",\r\n    \"channelValue\": \"sagar.katarnaware@caremetx.com\",\r\n    \"CallingApplicationName\": \"HCP-Onsite\",\r\n    \"CallingApplicationID\": \"76383-UHAG-98794-FCDRT\",\r\n    \"CallingApplicationSource\": \"HCP\",\r\n    \"ConsentRequestedForBrand\":\"\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hip02-be-caremetx-qa202.cmtx-aws.com/v1/invites/initiate",
+					"protocol": "https",
+					"host": [
+						"hip02-be-caremetx-qa202",
+						"cmtx-aws",
+						"com"
+					],
+					"path": [
+						"v1",
+						"invites",
+						"initiate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
